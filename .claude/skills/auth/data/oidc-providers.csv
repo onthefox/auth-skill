@@ -1,0 +1,20 @@
+Provider,Type,Free Tier,Pricing Model,Key Features,Best For,OAuth2 Support,OIDC Support,SAML Support,SDKs Available,Custom Domains,Multi-Factor Auth,User Store,Compliance
+Auth0,Identity Platform,Yes,MAU-based,Easy integration,extensive docs,Startups,SMBs,Full,Full,Full,All major,Custom,All methods,Built-in,SOC2,HIPAA,GDPR
+Okta,Enterprise IAM,Yes (limited),Per user/month,Enterprise features,SSO portal,Enterprises,Full,Full,Full,All major,Custom,All methods,Built-in + AD,SOC2,HIPAA,FedRAMP
+AWS Cognito,Cloud IAM,Yes,MAU-based,AWS integration,AWS-native apps,Full,Full,Limited,AWS SDK,Custom,All methods,Built-in,SOC2,HIPAA,GDPR
+Azure AD B2C,Cloud IAM,Yes,MAU-based,Azure integration,Enterprise apps,Full,Full,Full,Azure SDK,Custom,All methods,Built-in + AD,SOC2,HIPAA,ISO
+Keycloak,Self-hosted IAM,Free,Self-hosted cost,Full control,open source,On-premise,Full,Full,Full,All major,Custom,All methods,Built-in + LDAP,Configurable
+Firebase Auth,Mobile-first,Yes,MAU-based,Google integration,Mobile apps,Full,Limited,No,Google SDK,Limited,All methods,Built-in,SOC2,HIPAA,ISO
+Supabase Auth,Open source,Yes,MAU-based,Postgres integration,Supabase users,Full,Full,No,JS SDK,Custom,All methods,Built-in,SOC2
+Clerk,Developer-first,Yes,MAU-based,Pre-built components,React apps,Full,Full,No,React SDK,Custom,All methods,Built-in,SOC2
+NextAuth.js,Open source,Free,Self-hosted,Next.js integration,Next.js apps,Full,Full,No,Next.js,Custom,All methods,Bring your own,Self-certified
+Passport.js,Library,Free,Open source,Express middleware,Node.js apps,Full (strategies),Partial,No,Node.js,N/A,N/A,Bring your own,N/A
+Ory,Open source,Yes,Cloud or self-hosted,API-first,headless,Developers,Full,Full,Full,All major,Custom,All methods,Built-in,SOC2
+IdentityServer4,Framework,Free,.NET library,.NET integration,.NET apps,Full,Full,Full,.NET,Custom,All methods,Built-in + AD,Configurable
+Ping Identity,Enterprise,Yes,Per user/month,Enterprise SSO,Large enterprise,Full,Full,Full,All major,Custom,All methods,Built-in + AD,SOC2,HIPAA,FedRAMP
+ForgeRock,Enterprise IAM,Custom,Per user/month,Full IAM suite,Large enterprise,Full,Full,Full,All major,Custom,All methods,Built-in,SOC2,HIPAA,ISO
+Google Identity,Consumer,Free,Free,Google sign-in,Consumer apps,Full,Full,No,Google SDK,Limited,Google auth,Google accounts,SOC2,HIPAA
+Facebook Login,Social Login,Free,Free,Facebook sign-in,Consumer apps,Full,Limited,No,Facebook SDK,Limited,Facebook auth,Facebook accounts,SOC2
+Apple Sign In,Social Login,Free,Required for iOS,Privacy-focused,iOS apps,Full,Full,No,Apple SDK,Required,Apple auth,Apple accounts,SOC2
+GitHub OAuth,Social Login,Free,Free,Developer sign-in,Dev tools,Full,Limited,No,All major,Limited,GitHub auth,GitHub accounts,SOC2
+Microsoft Identity,Enterprise,Free,Per user/month,Azure integration,Enterprise apps,Full,Full,Full,MSAL SDK,Custom,All methods,Azure AD,SOC2,HIPAA,FedRAMP

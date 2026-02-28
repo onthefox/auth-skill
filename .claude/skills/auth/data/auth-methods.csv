@@ -1,0 +1,16 @@
+Method,Type,Security Level,Use Case,Pros,Cons,Implementation Complexity,Token Format,Session Storage
+JWT,Token-based,High,APIs,SPAs,Microservices,Stateless,Self-contained,Verbose tokens,Medium,Compact URL-safe string,None (self-contained)
+Session,Server-side,High,Traditional web apps,Full control,Easy invalidation,Server memory required,Scalability limits,Medium,Random session ID,Server memory/database
+OAuth2,Delegated auth,High,Third-party access,User doesn't share password,Complex flow,High,Access + Refresh tokens,Authorization server
+OpenID Connect,Identity layer,Very High,SSO,User identity,Built on OAuth2,Complex,ID Token + Access Token,Identity provider
+SAML,Enterprise SSO,Very High,Enterprise, Mature standard,XML verbosity,High,XML assertions,Identity provider
+API Key,Simple auth,Low,Server-to-server,Simple to implement,No user context,Low,Random string,None
+Basic Auth,HTTP auth,Low,Simple APIs,Easy to implement,Credentials on every request,Low,Base64 encoded,None
+Bearer Token,Token auth,Medium,APIs,Simple usage,Token theft risk,Low,Opaque or JWT,None
+mTLS,Certificate auth,Very High,B2B,Zero-trust,High security,Certificate management,High,TLS client certificate,None
+Magic Link,Passwordless,Medium,Consumer apps,No password to remember,Email delivery dependency,Medium,One-time token,None
+WebAuthn,Passwordless,Very High,High security apps,Phishing resistant,Hardware dependency,High,Public key credential,None
+Cognito,Managed identity,High,AWS apps,AWS integration,AWS lock-in,Medium,JWT tokens,AWS Cognito
+Auth0,Identity platform,High,Modern apps,Easy integration,Cost at scale,Low-Medium,JWT tokens,Auth0 cloud
+Okta,Enterprise identity,Very High,Enterprise SSO,Enterprise features,Complex pricing,Medium,JWT/OAuth2 tokens,Okta cloud
+Keycloak,Self-hosted IAM,High,On-premise,Free,Self-managed,Medium-High,JWT tokens,Self-hosted

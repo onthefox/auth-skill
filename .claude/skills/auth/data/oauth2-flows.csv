@@ -1,0 +1,11 @@
+Flow Name,Grant Type,Use Case,Security Level,PKCE Required,Client Type,Redirect URI,Token Response,Refresh Token Support,Security Notes
+Authorization Code,authorization_code,Server-side web apps,High,Yes for public clients,Confidential,Server callback,Code exchanged for tokens,Yes,Most secure flow for confidential clients
+Authorization Code + PKCE,authorization_code + PKCE,SPA,Mobile apps,Very High,Yes,Public,App callback,Code exchanged for tokens,Yes,Required for SPAs and mobile apps
+Implicit,implicit,Deprecated - Don't use,Low,No,Public,App callback,Direct token in URL,No,Vulnerable to token theft,use Auth Code + PKCE instead
+Client Credentials,client_credentials,Machine-to-machine,Medium,No,Confidential,None,Access token directly,No,For service accounts and daemons
+Device Authorization,urn:ietf:params:oauth:grant-type:device_code,IoT,CLI apps,Medium,No,Public,Poll for completion,Yes,User enters code on separate device
+Password Grant,password,Legacy - Don't use,Low,No,Confidential,None,Access + Refresh tokens,Yes,Requires trusting client with credentials
+Refresh Token,refresh_token,Token renewal,High,N/A,Both,None,New access token,Sometimes,Should rotate refresh tokens
+JWT Bearer,urn:ietf:params:oauth:grant-type:jwt-bearer,Service auth,High,No,Confidential,None,Access token,No,Exchange JWT for access token
+SAML2 Bearer,urn:ietf:params:oauth:grant-type:saml2-bearer,Federation,High,No,Both,None,Access token,No,Exchange SAML assertion for token
+Token Exchange,urn:ietf:params:oauth:grant-type:token-exchange,Delegation,High,No,Both,None,New token based on input,Yes,Exchange one token for another

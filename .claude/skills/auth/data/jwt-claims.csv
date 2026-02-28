@@ -1,0 +1,26 @@
+Claim Name,Claim Key,Type,Required,Description,Example Value,Validation Rules,Security Notes
+Issuer,iss,String,Yes,Token issuer URL,https://auth.example.com,Must match expected issuer,Prevents token substitution
+Subject,sub,String,Yes,User identifier,1234567890,Should be unique per user,Immutable user reference
+Audience,aud,String/Array,Yes,Intended recipient,https://api.example.com,Must match your API,Prevents cross-service token reuse
+Expiration,exp,Integer,Yes,Token expiry timestamp,1640995200,Must be in current time,Short-lived access tokens recommended
+Issued At,iati,Integer,Yes,Token creation timestamp,1640908800,Should be in past,Audit trail for token age
+Not Before,nbf,Integer,No,Token valid from,1640908800,Optional pre-validation,Delay token usability if needed
+JWT ID,jti,String,No,Unique token identifier,abc123,Use for revocation tracking,Prevent replay attacks
+Name,name,String,No,User's full name,John Doe,Display purposes only,Don't use for authorization
+Email,email,String,No,User's email,john@example.com,Validate format if used,Check email_verified claim
+Email Verified,email_verified,Boolean,No,Email verification status,true,Check before trusting email,Prevent account takeover
+Phone Number,phone_number,String,No,User's phone,+1-555-123-4567,Validate format,Use E.164 format
+Phone Verified,phone_number_verified,Boolean,No,Phone verification status,false,Check before trusting phone,Secondary verification
+Given Name,given_name,String,No,First name,John,Display purposes,User-provided data
+Family Name,family_name,String,No,Last name,Doe,Display purposes,User-provided data
+Locale,locale,String,No,User's locale,en-US,Use for localization,BCP 47 language tag
+Profile,picture,String,No,Profile picture URL,https://example.com/pic.jpg,Validate URL format,CDN-hosted recommended
+Groups,groups,String Array,No,User's groups,["admin","user"],Use for RBAC,Keep group list manageable
+Roles,roles,String Array,No,User's roles,["read","write"],Use for permissions,Validate against known roles
+Scope,scope,String/Array,No,Granted scopes,read write profile,Validate each scope,Space-separated or array
+Tenant ID,tenant_id,String,No,Multi-tenant identifier,tenant-123,Isolate tenant data,Critical for SaaS
+Permissions,permissions,String Array,No,Specific permissions,["users:read","users:write"],Fine-grained authZ,Validate each permission
+Session ID,sid,String,No,Session identifier,sess_abc123,Track active sessions,Use for session invalidation
+Authentication Time,auth_time,Integer,No,When user authenticated,1640908800,Check for re-auth requirements,Enforce MFA freshness
+Authentication Context,acr,String,No,Auth method used,urn:mace:incommon:iap:silver,Verify auth strength,Compliance requirements
+Authorized Party,azp,String,No,Authorized client ID,client-123,Validate for multi-audience,Prevent confused deputy

@@ -1,0 +1,20 @@
+Header Name,Header Value,Priority,Description,Security Benefit,Implementation Notes,Browser Support,Common Mistakes
+Strict-Transport-Security,max-age=31536000; includeSubDomains; preload,Critical,Enforce HTTPS,Prevents protocol downgrade attacks,Set on all HTTPS responses,All modern browsers,Missing includeSubDomains
+X-Frame-Options,DENY,Critical,Prevent clickjacking,Blocks iframe embedding,Use DENY or SAMEORIGIN,All modern browsers,Not set at all
+X-Content-Type-Options,nosniff,Critical,Prevent MIME sniffing,Blocks content-type guessing,Set on all responses,All modern browsers,Incorrect value
+Content-Security-Policy,default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline',Critical,Prevent XSS,Restricts resource loading,Start restrictive,relax as needed,All modern browsers,Too permissive or missing
+X-XSS-Protection,1; mode=block,High,Legacy XSS filter,Enables browser XSS filter,Deprecated but still useful,IE8+,Edge legacy,Not using mode=block
+Referrer-Policy,strict-origin-when-cross-origin,High,Control referrer info,Prevents info leakage,Good default for most sites,All modern browsers,Missing or too strict
+Permissions-Policy,geolocation=(); microphone=(); camera=(),High,Control browser features,Prevents feature abuse,List all unused features,All modern browsers,Not setting at all
+Cross-Origin-Opener-Policy,same-origin,High,Isolate browsing context,Prevents Spectre attacks,Use for sensitive apps,Chrome 83+,Firefox 92+,Missing on sensitive apps
+Cross-Origin-Embedder-Policy,require-corp,High,Isolate resources,Prevents data leakage,Use with COOP,Chrome 83+,Firefox 92+,Not paired with COOP
+Cross-Origin-Resource-Policy,same-origin,High,Protect resources,Prevents cross-origin reads,Set on API responses,Chrome 67+,Safari 13+,Missing on APIs
+Cache-Control,no-store; no-cache; must-revalidate,High,Prevent caching,Sensitive data in cache,Set on auth pages,All browsers,Missing on sensitive pages
+Pragma,no-cache,Medium,Legacy no-cache,HTTP/1.0 compatibility,Use with Cache-Control,Legacy browsers,Used alone without Cache-Control
+Expires,0,Medium,Legacy no-cache,HTTP/1.0 compatibility,Set to past date,All browsers,Used alone without Cache-Control
+X-Permitted-Cross-Domain-Policies,none,Medium,Restrict Adobe policies,Prevents cross-domain attacks,Important for Flash/Silverlight,All browsers,Not set
+X-Download-Options,noopen,Medium,Prevent IE downloads,Blocks executable downloads,IE8+ legacy,IE only,Not set
+X-DNS-Prefetch-Control,off,Low,Disable DNS prefetch,Prevents info leakage,Privacy consideration,All browsers,Not necessary for most
+Expect-CT,max-age=86400; enforce; report-uri="https://example.com/report",Medium,Certificate Transparency,Detect misissued certs,Deprecated Oct 2022,Chrome 67+,Deprecated but still useful
+Report-To,{"group":"default","max_age":31546000,"endpoints":[{"url":"https://example.com/report"}]},Medium,Reporting API,Security violation reports,Requires reporting endpoint,Chrome 70+,Firefox 96+,Complex setup
+NEL,{"report_to":"default","max_age":31546000},Low,Network Error Logging,Monitor network errors,Requires reporting endpoint,Chrome 66+,Firefox 92+,Not commonly used
